@@ -1,0 +1,60 @@
+Xft*dpi:                   96
+Xft*antialias:             true
+Xft*hinting:               full
+Xcursor.theme:             Vanilla-DMZ
+!---YeahConsole---
+yeahconsole*term:          urxvt
+yeahconsole*scrollBar:     false
+yeahconsole*restart:       1
+yeahconsole*handleWidth:   1
+yeahconsole*consoleHeight: 40
+yeahconsole*aniDelay:      0
+yeahconsole*stepSize:      25
+yeahconsole*screenWidth:   1200
+yeahconsole*yOffset:       16
+yeahconsole*xOffset:       83
+yeahconsole*toggleKey:     none+F12
+
+
+!---urxvt---
+!URxvt*termName:            rxvt
+!URxvt*reverseVideo:        true
+URxvt*font:                7x13
+!URxvt*font:                -*-terminus-*-*-*-*-12-*-*-*-*-*-*-u
+URxvt*loginShell:          true
+URxvt*scrollBar:           false
+URxvt.urlLauncher:         firefox
+URxvt*perl-ext-common:     default,matcher,-readline,-selection-popup
+URxvt*matcher.button:      1
+URxvt*jumpScroll:          true
+URxvt*iconFile:            /usr/share/icons/Tango/32x32/apps/gnome-terminal.png
+
+!URxvt.meta:                ignore
+!URxvt*meta8:               true
+!URxvt*modifier:            alt
+
+!Fix keys for VIM
+!URxvt.keysym.Meta-Left:    \033[1;3D
+!URxvt.keysym.Meta-Right:   \033[1;3C
+
+!---urxvt -name IRC---
+IRC*iconFile:              /usr/share/icons/Tango/32x32/apps/internet-group-chat.png
+IRC*urgentOnBell:          true
+IRC*title:                 irssi
+IRC*saveLines:             0
+
+URxvt.background:          #000000
+URxvt.foreground:          gray90
+URxvt.color7:              gray90
+URxvt.colorBD:             #ffffff
+URxvt.cursorColor:         #e0e080
+URxvt.throughColor:        #8080f0
+
+!
+
+Emacs*font: Inconsolata 10
+
+!---Xnetload---
+XNetload*interface:        eth0
+XNetload*noCharts:         true
+XNetload*noInterface:      true
