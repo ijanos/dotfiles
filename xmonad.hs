@@ -3,6 +3,7 @@ import Data.Monoid
 import System.Exit
 import XMonad.Layout.NoBorders
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.UrgencyHook
 import XMonad.Hooks.DynamicLog
 import XMonad.Actions.WindowBringer
 import XMonad.Hooks.ManageHelpers (isDialog, doCenterFloat)
@@ -274,6 +275,7 @@ myBar = "xmobar"
 myPP = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "[" "]"
                 , ppHidden = wrap " " " "
                 , ppWsSep = ""
+                , ppUrgent = xmobarColor "white" "red" . wrap " " " "
                 , ppSep = xmobarColor "white" "" " | "
                 , ppTitle = xmobarColor "green" "" . shorten 150
                 }
@@ -286,7 +288,7 @@ toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
 -- Run xmonad with the settings you specify. No need to modify this.
 --
-main = xmonad =<< statusBar myBar myPP toggleStrutsKey defaults
+main = xmonad =<< statusBar myBar myPP toggleStrutsKey (withUrgencyHook NoUrgencyHook $ defaults)
 
 -- A structure containing your configuration settings, overriding
 -- fields in the default config. Any you don't override, will
