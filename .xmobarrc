@@ -1,4 +1,4 @@
-Config { font = "xft:Fixed-8:style=Bold"
+Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
        , bgColor = "black"
        , fgColor = "grey"
        , position = Top
