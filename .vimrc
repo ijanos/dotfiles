@@ -37,7 +37,7 @@ set shortmess=aITtoO
 " Don't use Ex mode, use Q for formatting
 map Q gq 
 
-set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.pdf
 
 
 " In many terminal emulators the mouse works just fine, thus enable it.
