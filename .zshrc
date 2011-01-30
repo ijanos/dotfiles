@@ -20,6 +20,7 @@ zstyle ':completion:*:approximate:*' max-errors 2 numeric
 zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
 
 compdef _pacman clyde=pacman
+compdef _pacman packer=pacman
 
 # With commands like `rm' it's annoying if one gets offered the same filename
 # again even if it is already on the command line. To avoid that:
