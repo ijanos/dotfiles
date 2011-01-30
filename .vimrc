@@ -117,9 +117,22 @@ endif " has("autocmd")
 
 " keybinds
 
+if v:version >= 700
+    function! ToggleSpell()
+        if &spell != 1
+            setlocal spell spelllang=hu
+        else
+            setlocal spell!
+        endif
+    endfunction
+    nnoremap <silent> <F7> <ESC>:call ToggleSpell()<CR>
+    setlocal spelllang=hu
+endif
+
 " I only press F1 when I miss my ESC key, the opening of the help windows is
 " annoying. Maybe I should map it to <ESC>
 nmap <F1> <nop> 
+
 map <F6> :QFix<CR>
 
 map <F5> :make<CR><CR>
