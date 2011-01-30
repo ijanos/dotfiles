@@ -55,8 +55,8 @@ myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
-myNormalBorderColor  = "#dddddd"
-myFocusedBorderColor = "#EE0000"
+myNormalBorderColor  = "#333333"
+myFocusedBorderColor = "#4C7899"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -262,7 +262,7 @@ myLogHook = return ()
 -- By default, do nothing.
 myStartupHook = do
                 spawn "xsetroot -cursor_name left_ptr -fg white -bg black"
-                spawn "xsetroot -solid \"#6F8E9F\""
+                spawn "xsetroot -solid \"#515151\""
 
 -- Command to launch the bar.
 myBar = "xmobar"
