@@ -123,6 +123,9 @@ endif " has("autocmd")
 
 " keybinds
 
+" I only press F1 when I miss my ESC key, the opening of the help windows is
+" annoying. Maybe I should map it to <ESC>
+nmap <F1> <nop> 
 map <F6> :QFix<CR>
 
 map <F5> :make<CR><CR>
