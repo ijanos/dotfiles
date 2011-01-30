@@ -225,7 +225,7 @@ myManageHook = composeAll
     , className =? "Gimp"              --> doFloat
     , isDialog                         --> doCenterFloat
     ]
-  where role = stringProperty "WM_WINDOW_ROLE"
+  where role   = stringProperty "WM_WINDOW_ROLE"
         doTile = ask >>= doF . W.sink
 
 ------------------------------------------------------------------------
