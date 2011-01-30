@@ -131,6 +131,11 @@ vmap <s-tab> <gv
 " Select all.
 map <c-a> ggVG
 
+" Shift-up/down was pgup/pgdown which is annoying
+map <S-Up> k
+map <S-Down> j
+
+
 " Up/down keys move one screen line and note a real line
 map <Up> gk
 map <Down> gj
