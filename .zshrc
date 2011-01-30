@@ -31,7 +31,7 @@ zstyle ':completion:*:rm:*' ignore-line yes
 # -----------------
 clyde(){
      case $1 in
-          (-Si | -Ss | -Q*)
+          (-Si | -Ss | -Q* | -G)
                /usr/bin/clyde "$@" ;;
      
           (-S* | -R* | -U | *)
