@@ -1,14 +1,14 @@
 import XMonad
 import Data.Monoid
 import System.Exit
+
 import XMonad.Layout.NoBorders
+
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.UrgencyHook
 import XMonad.Hooks.DynamicLog
 import XMonad.Actions.WindowBringer
 import XMonad.Hooks.ManageHelpers (isDialog, doCenterFloat)
---import XMonad.Prompt
---import XMonad.Prompt.Shell
 
 import qualified XMonad.Actions.FlexibleResize as Flex
 import qualified XMonad.StackSet as W
