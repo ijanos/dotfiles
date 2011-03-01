@@ -89,8 +89,8 @@ if has("autocmd")
   " Python
   autocmd FileType python set omnifunc=pythoncomplete#Complete
   autocmd FileType python compiler pylint
-     let g:pylint_onwrite = 0
-     let g:pylint_show_rate = 0
+  let g:pylint_onwrite = 0
+  let g:pylint_show_rate = 0
 
   " Perl
   autocmd FileType perl compiler perl
