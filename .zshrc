@@ -29,15 +29,15 @@ zstyle ':completion:*:rm:*' ignore-line yes
 # -----------------
 # Clyde autosudo
 # -----------------
-clyde(){
-     case $1 in
-          (-Si | -Ss | -Q* | -G)
-               /usr/bin/clyde "$@" ;;
-     
-          (-S* | -R* | -U | *)
-               /usr/bin/sudo /usr/bin/clyde "$@" 
-          esac
+clyde() {
+   case $1 in
+       -S | -S[^sih]* | -R* | -U*)
+           /usr/bin/sudo /usr/bin/clyde "$@" ;;
+       *)
+           /usr/bin/clyde "$@" ;;
+   esac
 }
+
 
 # -----------------
 # General settings
