@@ -9,6 +9,7 @@ import XMonad.Hooks.UrgencyHook
 import XMonad.Hooks.DynamicLog
 import XMonad.Actions.WindowBringer
 import XMonad.Hooks.ManageHelpers (isDialog, doCenterFloat)
+import XMonad.Actions.CycleWS
 
 import qualified XMonad.Actions.FlexibleResize as Flex
 import qualified XMonad.StackSet as W
@@ -125,6 +126,12 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     , ((modm .|. shiftMask, xK_g     ), gotoMenu)
     , ((modm .|. shiftMask, xK_b     ), bringMenu)
+
+
+    , ((modm .|. controlMask, xK_Right),  nextWS)
+    , ((modm .|. controlMask, xK_Left),   prevWS)
+    , ((modm .|. shiftMask,   xK_Right),  shiftToNext >> nextWS)
+    , ((modm .|. shiftMask,   xK_Left),   shiftToPrev >> prevWS)
 
 
     -- Toggle the status bar gap
