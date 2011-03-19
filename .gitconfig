@@ -1,0 +1,13 @@
+[user]
+	name = János Illés
+	email = ijanos@gmail.com
+[color]
+	pager = true
+	ui = auto
+[core]
+	editor = vim
+	pager = less -FRSX
+[merge]
+	tool = vimdiff
+[gui]
+	spellingdictionary = none
