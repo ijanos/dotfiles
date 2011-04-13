@@ -199,9 +199,6 @@ alias ll='ls -lhX --group-directories-first'
 alias ..='cd ..'
 alias ...="cd ../.."
 alias ....="cd ../../.."
-#alias ural2pf='ssh -L 7777:cache.iit.bme.hu:3128 ij647@ural2.hszk.bme.hu'
-alias ural2pf='ssh -L 7777:chardonnay.math.bme.hu:3128 ij647@ural2.hszk.bme.hu'
-alias ural2='ssh ij647@ural2.hszk.bme.hu'
 alias df='df -Th -x tmpfs -x fuse -x usbfs -x devtmpfs'
 alias ds='du -sh'
 alias png='ping bix.hu'
@@ -211,15 +208,9 @@ alias hdtt='du -s .*|sort -n|tail'
 alias mv='mv -v -i'
 alias cp='cp -v -i'
 alias rm='rm -iv'
-alias pysize='pysize --ui=curses'
 alias F='find . -iname'
 alias topfiles='ls -lsR | sort -nr|less'
-alias maemoX='Xephyr :2 -host-cursor -screen 800x480x16 -dpi 96 -ac -extension Composite &'
-alias Xdoboz='Xephyr :1 -host-cursor -screen 1280x710x16 -dpi 96 -ac -extension Composite'
 alias pacsize="pacman -Qi|awk '/^Installed Size/{print int(\$4), name} /^Name/{name=\$3}'|sort -nr|less"
-alias urxvtfont="printf '\33]50;%s\007'"
-alias skype="LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so skype"
-alias XP="/opt/virtualbox/VirtualBox -comment redmond -startvm 8bccf4e1-805a-465b-a3f3-8c384d1028ba"
 alias -g BB="> /dev/null 2>&1 &!"
 alias DB='~/.dropbox-dist/dropboxd 2>&1 &!'
 alias netstatmod='netstat --all --numeric --programs --inet'
