@@ -10,6 +10,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Actions.WindowBringer
 import XMonad.Hooks.ManageHelpers (isDialog, doCenterFloat)
 import XMonad.Actions.CycleWS
+import XMonad.Actions.Promote
 
 import qualified XMonad.Actions.FlexibleResize as Flex
 import qualified XMonad.StackSet as W
@@ -19,7 +20,7 @@ myTerminal      = "urxvt"
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
-myFocusFollowsMouse = True
+myFocusFollowsMouse = False
 
 -- Width of the window border in pixels.
 --
@@ -244,7 +245,18 @@ myManageHook = composeAll
 -- return (All True) if the default handler is to be run afterwards. To
 -- combine event hooks use mappend or mconcat from Data.Monoid.
 --
-myEventHook = mempty
+myEventHook = floatClickFocusHandler
+
+-- bring clicked floating window to the front
+floatClickFocusHandler :: Event -> X All
+floatClickFocusHandler ButtonEvent { ev_window = w } = do
+        withWindowSet $ \s -> do
+                if isFloat w s
+                    then (focus w >> promote)
+                    else return ()
+                return (All True)
+                where isFloat w ss = M.member w $ W.floating ss
+floatClickFocusHandler _ = return (All True)
 
 ------------------------------------------------------------------------
 -- Status bars and logging
