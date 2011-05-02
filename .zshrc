@@ -76,8 +76,6 @@ setopt LISTTYPES               # show types in completion
 
 export PAGER='less -I'         # case insensitive less for manpages
 export EDITOR=vim              # set editor
-export OOO_FORCE_DESKTOP=gnome # nice openoffice widgets
-export MOZ_DISABLE_PANGO=1     # speed up firefox rendering
 
 setopt extended_glob
 
