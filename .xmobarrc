@@ -3,13 +3,17 @@ Config { font = "-*-fixed-*-*-*-*-10-*-*-*-*-*-*-u"
        , fgColor = "grey"
        , position = Top
        , lowerOnStart = True
-       , commands = [ Run Com "uptime" ["|","sed","'s/.*://; s/,//g'"] "load" 13
-                    , Run StdinReader
-                    , Run Memory ["-t","mem: <used>MiB"] 10
+       , commands = [ Run StdinReader
+                    , Run MultiCpu ["-t", "<autototal>"
+                                   ,"-L","3"
+                                   ,"-H","50","--normal","green"
+                                   ,"--high","red"]
+                      20
+                    , Run Memory ["-t","<used>MiB"] 10
                     , Run Date "<fc=#999999>%Y-%m-%_d</fc> <fc=#FFFFFF>%H:%M</fc>" "date" 9
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %load% | %memory% | %date%"
+       , template = "%StdinReader% }{ %multicpu% | %memory% | %date%"
        }
 
