@@ -12,7 +12,10 @@ import XMonad.Hooks.ManageHelpers (isDialog, doCenterFloat)
 import XMonad.Actions.CycleWS
 import XMonad.Actions.Promote
 
+import XMonad.Util.Loggers
 import qualified XMonad.Actions.FlexibleResize as Flex
+import XMonad.Util.NamedWindows (getName)
+import Data.Traversable (traverse)
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
@@ -299,7 +302,11 @@ myPP = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "[" "]"
                                          "Full"        -> "X"
                                 )
                 , ppTitle = xmobarColor "green" "" . shorten 150
+                , ppExtras =  [ windows ]
                 }
+        where windows = do
+                     s <- withWindowSet $ traverse (fmap show . getName) . W.index
+                     return $ Just (concat s)
 
 -- Keybinding to toggle the gap for the bar.
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
