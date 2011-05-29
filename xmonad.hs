@@ -292,6 +292,12 @@ myPP = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "[" "]"
                 , ppWsSep = ""
                 , ppUrgent = xmobarColor "white" "red" . wrap " " " "
                 , ppSep = xmobarColor "white" "" " | "
+                , ppLayout  = xmobarColor "grey" "" .
+                                (\x -> case x of
+                                         "Tall"        -> "|"
+                                         "Mirror Tall" -> "="
+                                         "Full"        -> "X"
+                                )
                 , ppTitle = xmobarColor "green" "" . shorten 150
                 }
 
