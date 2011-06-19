@@ -138,6 +138,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask,   xK_Left),   shiftToPrev >> prevWS)
 
 
+    , ((shiftMask,   xK_Escape),   spawn "urxvt -name htop -g 105x50+340+50 -e htop")
     -- Toggle the status bar gap
     -- Use this binding with avoidStruts from Hooks.ManageDocks.
     -- See also the statusBar function from Hooks.DynamicLog.
@@ -234,6 +235,8 @@ myManageHook = composeAll
     , resource  =? "kdesktop"          --> doIgnore 
     , role      =? "gimp-image-window" --> doTile
     , className =? "Gimp"              --> doFloat
+    , appName   =? "htop"              --> doCenterFloat
+    , appName   =? "gmrun"             --> doCenterFloat
     , isDialog                         --> doCenterFloat
     ]
   where role   = stringProperty "WM_WINDOW_ROLE"
