@@ -19,7 +19,8 @@ urxvtd -o -f
 #eval `cat ~/.fehbg` &
 xsetroot -cursor_name left_ptr -fg white -bg black
 xsetroot -solid "#6F8E9F"
-yeahconsole -e screen -d -RR yeah &
+#yeahconsole -e screen -d -RR yeah &
+yeahconsole -e /home/ijanos/.bin/tmuxstart.sh
 #fbpanel &
 lxpanel &
 #thunar --daemon &
