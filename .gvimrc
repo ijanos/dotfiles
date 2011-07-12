@@ -14,7 +14,7 @@ colorscheme zenburn
 
 set guioptions-=T   "remove the toolbar
 set guioptions-=m   "remove the menubar
-set guioptions-=l   "remove left scrollbar
-set guioptions-=R   "remove right scrollbar
+set guioptions-=L   "remove left scrollbar
+set guioptions-=r   "remove right scrollbar
 set cul             "cursorline, eyecandy but useful (and resource hungry) 
 set lz              "lazy redraw. so cursorline wont be that heavy
