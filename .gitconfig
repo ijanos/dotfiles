@@ -6,7 +6,7 @@
 	ui = auto
 [core]
 	editor = vim
-	pager = less -FRSX
+	pager = less -RS
 [merge]
 	tool = vimdiff
 [gui]
