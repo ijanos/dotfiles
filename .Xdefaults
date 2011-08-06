@@ -1,6 +1,3 @@
-Xft*dpi:                   96
-Xft*antialias:             true
-Xft*hinting:               full
 Xcursor.theme:             Vanilla-DMZ
 !---YeahConsole---
 yeahconsole*term:          urxvt
@@ -49,10 +46,6 @@ URxvt.color7:              gray90
 URxvt.colorBD:             #ffffff
 URxvt.cursorColor:         #e0e080
 URxvt.throughColor:        #8080f0
-
-!
-
-Emacs*font: Inconsolata 10
 
 !---Xnetload---
 XNetload*interface:        eth0
