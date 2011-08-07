@@ -212,6 +212,6 @@ alias -g BB="> /dev/null 2>&1 &!"
 alias DB='~/.dropbox-dist/dropboxd 2>&1 &!'
 alias netstatmod='netstat --all --numeric --programs --inet'
 alias rh='rehash'
-
+alias dl='wget -c -t 0'
 
 chpwd
