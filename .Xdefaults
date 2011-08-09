@@ -46,9 +46,6 @@ htop*iconFile:             /usr/share/icons/Tango/32x32/apps/gnome-monitor.png
 URxvt.background:          #000000
 URxvt.foreground:          gray90
 URxvt.color7:              gray90
-URxvt.colorBD:             #ffffff
-URxvt.cursorColor:         #e0e080
-URxvt.throughColor:        #8080f0
 
 !---Xnetload---
 XNetload*interface:        eth0
