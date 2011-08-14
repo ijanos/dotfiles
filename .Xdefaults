@@ -8,7 +8,6 @@ yeahconsole*consoleHeight: 40
 yeahconsole*aniDelay:      0
 yeahconsole*stepSize:      25
 yeahconsole*screenWidth:   1200
-yeahconsole*yOffset:       16
 yeahconsole*xOffset:       83
 yeahconsole*toggleKey:     none+F12
 
