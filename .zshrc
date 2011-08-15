@@ -10,6 +10,9 @@ zstyle :compinstall filename '/home/ijanos/.zshrc'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
+# Do rehash before every completion
+zstyle ":completion:*:commands" rehash 1
+
 # Fuzzy matching of completions for when you mistype them:
 zstyle ':completion:*' completer _complete _match _approximate
 zstyle ':completion:*:match:*' original only
