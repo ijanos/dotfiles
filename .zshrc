@@ -124,8 +124,6 @@ chpwd() {
   esac
 }
 
-export PATH=$PATH:/home/ijanos/.cabal/bin
-
 # -----------------
 # COLORS
 # -----------------
