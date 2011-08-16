@@ -29,19 +29,6 @@ compdef _pacman packer=pacman
 zstyle ':completion:*:rm:*' ignore-line yes
 
 # -----------------
-# Clyde autosudo
-# -----------------
-clyde() {
-   case $1 in
-       -S | -S[^sih]* | -R* | -U*)
-           /usr/bin/sudo /usr/bin/clyde "$@" ;;
-       *)
-           /usr/bin/clyde "$@" ;;
-   esac
-}
-
-
-# -----------------
 # General settings
 # -----------------
 
