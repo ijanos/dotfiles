@@ -197,9 +197,7 @@ alias F='find . -iname'
 alias topfiles='ls -lsR | sort -nr|less'
 alias pacsize="pacman -Qi|awk '/^Installed Size/{print int(\$4), name} /^Name/{name=\$3}'|sort -nr|less"
 alias -g BB="> /dev/null 2>&1 &!"
-alias DB='~/.dropbox-dist/dropboxd 2>&1 &!'
 alias netstatmod='netstat --all --numeric --programs --inet'
-alias rh='rehash'
 alias dl='wget -c -t 0'
 
 chpwd
