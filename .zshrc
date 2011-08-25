@@ -68,10 +68,6 @@ export EDITOR=vim              # set editor
 
 setopt extended_glob
 
-# colorize stderr messages. Nice, but buggy :(
-#exec 2>>(while read line; do
-#  print '\e[91m'${(q)line}'\e[0m' > /dev/tty; print -n $'\0'; done &)
-
 # ---------------
 # Locale settings
 # ---------------
