@@ -72,6 +72,12 @@ setopt extended_glob
 #exec 2>>(while read line; do
 #  print '\e[91m'${(q)line}'\e[0m' > /dev/tty; print -n $'\0'; done &)
 
+# ---------------
+# Locale settings
+# ---------------
+
+export LC_TIME="hu_HU.UTF-8"
+export LC_PAPER="hu_HU.UTF-8"
 
 # -----------------
 # Extract function
