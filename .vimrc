@@ -55,7 +55,7 @@ endif
 
 set laststatus=2
 if has("statusline")
-	set statusline=%F%m%r%h%w\ [%{&ff}:%{(&fenc==\"\"?&enc:&fenc)}]%y\ %=%{fugitive#statusline()}[%l,%v][%L][%p%%]
+   set statusline=%F%m%r%h%w\ [%{&ff}:%{(&fenc==\"\"?&enc:&fenc)}]%y\ %=%{fugitive#statusline()}[%l,%v][%L][%p%%]
 endif
 
 " Only do this part when compiled with support for autocommands.
