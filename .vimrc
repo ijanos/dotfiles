@@ -53,6 +53,12 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
+" It highlights trailing whitespace and tab characters
+autocmd ColorScheme * highlight TrailingWhitespace ctermbg=red guibg=red
+autocmd ColorScheme * highlight UnwantedWhitespace ctermbg=darkgreen guibg=darkgreen
+autocmd Syntax * syntax match TrailingWhitespace /\s\+$/ containedin=ALL
+autocmd Syntax * syntax match UnwantedWhitespace /\t/ containedin=ALL
+
 set laststatus=2
 if has("statusline")
    set statusline=%F%m%r%h%w\ [%{&ff}:%{(&fenc==\"\"?&enc:&fenc)}]%y\ %=%{fugitive#statusline()}[%l,%v][%L][%p%%]
