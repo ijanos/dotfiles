@@ -11,3 +11,14 @@
 	tool = vimdiff
 [gui]
 	spellingdictionary = none
+	historybrowser = gitk
+	editor = gvim
+[giggle]
+	main-window-maximized = true
+	main-window-geometry = 0x0+0+0
+	history-view-vpane-position = 298
+	file-view-vpane-position = 662
+	main-window-view = HistoryView
+[cola]
+	fontdiff = Consolas,9,-1,5,50,0,0,0,0,0
+	tabwidth = 4
