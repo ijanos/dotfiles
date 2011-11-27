@@ -358,6 +358,11 @@
     </keybind>
     <keybind key="W-m">
       <action name="Execute">
+          <command>thunar</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-m">
+      <action name="Execute">
           <command>urxvt -fn "xft:Inconsolata:size=11" -g 133x40+160+55 -name mc -e mc -sS xoria256</command>
       </action>
     </keybind>
