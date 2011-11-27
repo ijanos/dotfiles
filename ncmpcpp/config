@@ -143,6 +143,7 @@
 ##
 #
 #song_list_format = "{%a - }{%t}|{$8%f$9}$R{$3(%l)$9}"
+song_list_format = "{%a - %b }{%n | %t}|{$8%f$9}$R{$3(%l)$9}"
 #
 #song_status_format = "{{%a{ \"%b\"{ (%y)}} - }{%t}}|{%f}"
 #
@@ -227,6 +228,7 @@
 ##
 #
 #song_columns_list_format = "(7f)[green]{l} (25)[cyan]{a} (40)[]{t|f} (30)[red]{b}"
+song_columns_list_format = "(20)[]{a} (30)[]{b} (4f)[]{n} (40)[]{t|f}  (10)[]{l}"
 #
 ##### various settings #####
 #

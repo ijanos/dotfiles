@@ -9,3 +9,6 @@ softvol=yes
 softvol-max=1000
 
 ontop=yes
+
+[gnome-mplayer]
+msglevel=all=5
