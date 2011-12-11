@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# /etc/rc.local: Local multi-user startup script.
+#
+
+# Set radeon card into low power mode
+echo low > /sys/class/drm/card0/device/power_profile
+
+# Use the bfq as the default IO scheduler
+echo bfq > /sys/block/sda/queue/scheduler
+
+# change the scheduler queue length
+echo 8192 > /sys/block/sda/queue/nr_requests
+
+# do not park the HDD head please
+hdparm -B 254 /dev/sda
