@@ -6,4 +6,8 @@
 # locations, so I can tell which files are currently in use by the 
 # number of hardlinks. If it is one, the file is not in use.
 
-find . -path "./.git/*" -prune -o -links 1 -print
+find .\
+    -path "./.git/*" -prune -o\
+    -name "README" -prune -o\
+    -name "unused.sh" -prune -o\
+    -links 1 -print
