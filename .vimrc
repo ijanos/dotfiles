@@ -45,3 +45,11 @@ filetype plugin indent on       " required!
 "" Keymaps
 
 map <F4> :nohl<CR>
+
+" Disable shift-up/down which is pgup/pgdown
+map <S-Up> k
+map <S-Down> j
+
+" Make tab in visual mode work like I think it should (keep highlighting)
+vmap <tab> >gv
+vmap <s-tab> <gv
