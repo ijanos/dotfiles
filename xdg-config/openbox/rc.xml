@@ -356,6 +356,13 @@
         <command>urxvt -name ncmpcpp -g 133x53+240+30 -e ncmpcpp</command>
       </action>
     </keybind>
+
+    <keybind key="W-l">
+      <action name="Execute">
+          <command>xlock -mode blank</command>
+      </action>
+    </keybind>
+
     <keybind key="W-m">
       <action name="Execute">
           <command>thunar</command>
