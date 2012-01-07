@@ -35,7 +35,7 @@ Bundle 'minibufexplorerpp'
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 
-Bundle 'ctrlp.vim'
+Bundle 'kien/ctrlp.vim'
 " don’t manage working directory
 let g:ctrlp_working_path_mode = 0
 
