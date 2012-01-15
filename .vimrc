@@ -39,6 +39,9 @@ Bundle 'kien/ctrlp.vim'
 " don’t manage working directory
 let g:ctrlp_working_path_mode = 0
 
+" Zenburn colorscheme
+Bundle 'Zenburn'
+
 
 filetype plugin indent on       " required!
 
