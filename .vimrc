@@ -42,6 +42,9 @@ let g:ctrlp_working_path_mode = 0
 " Zenburn colorscheme
 Bundle 'Zenburn'
 
+" Syntax checking
+Bundle 'scrooloose/syntastic'
+
 
 filetype plugin indent on       " required!
 
