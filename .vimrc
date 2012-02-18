@@ -65,3 +65,7 @@ map <S-Down> j
 " Make tab in visual mode work like I think it should (keep highlighting)
 vmap <tab> >gv
 vmap <s-tab> <gv
+
+" Toggle the location window
+map <F6> :lopen<CR>
+map <S-F6> :lclose<CR>
