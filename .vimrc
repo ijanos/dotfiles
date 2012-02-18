@@ -1,4 +1,6 @@
+"""""""""""""""""""
 "" General settings
+"""""""""""""""""""
 set nocompatible                " choose no compatibility with legacy vi
 syntax enable
 set encoding=utf-8
@@ -21,7 +23,9 @@ set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
+""""""""""""""""""
 "" Vundle settings
+""""""""""""""""""
 filetype off                    " required
 
 set rtp+=~/.vim/bundle/vundle/
@@ -48,7 +52,9 @@ Bundle 'scrooloose/syntastic'
 
 filetype plugin indent on       " required!
 
+""""""""""
 "" Keymaps
+""""""""""
 
 map <F4> :nohl<CR>
 
