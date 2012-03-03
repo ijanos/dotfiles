@@ -12,5 +12,9 @@ echo bfq > /sys/block/sda/queue/scheduler
 # change the scheduler queue length
 echo 8192 > /sys/block/sda/queue/nr_requests
 
+# Set to never or madvise to avoid lag during heavy IO
+# http://lwn.net/Articles/467328/
+echo never > /sys/kernel/mm/transparent_hugepage/defrag
+
 # do not park the HDD head please
 hdparm -B 254 /dev/sda
