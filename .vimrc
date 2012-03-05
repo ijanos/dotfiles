@@ -74,3 +74,6 @@ vmap <s-tab> <gv
 " Toggle the location window
 map <F6> :lopen<CR>
 map <S-F6> :lclose<CR>
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! %!sudo tee > /dev/null %
