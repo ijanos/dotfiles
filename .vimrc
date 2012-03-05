@@ -11,6 +11,10 @@ set wildmenu                    " show possible matches for tabcompletion
 " Exclude these files and directories from search
 set wildignore+=*.git/*,*.hg/*,*.svn/*,*.so,*.pdf,*.py[co],*.o,*.swp
 
+
+" Only redraw when necessary to avoid flicker
+set lazyredraw
+
 "" Whitespace
 set nowrap                      " don't wrap lines
 set tabstop=4 shiftwidth=4      " a tab is four spaces
