@@ -7,6 +7,7 @@ set encoding=utf-8
 set showcmd                     " display incomplete commands
 set number                      " always show line numbers
 set wildmenu                    " show possible matches for tabcompletion
+set hidden                      " allow modified buffers to stay in the background
 
 " Exclude these files and directories from search
 set wildignore+=*.git/*,*.hg/*,*.svn/*,*.so,*.pdf,*.py[co],*.o,*.swp
