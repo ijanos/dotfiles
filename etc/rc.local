@@ -16,5 +16,8 @@ echo 8192 > /sys/block/sda/queue/nr_requests
 # http://lwn.net/Articles/467328/
 echo never > /sys/kernel/mm/transparent_hugepage/defrag
 
+# Turn on audio card power save
+echo 1 > /sys/module/snd_hda_intel/parameters/power_save
+
 # do not park the HDD head please
 hdparm -B 254 /dev/sda
