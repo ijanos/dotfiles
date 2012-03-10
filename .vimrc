@@ -78,3 +78,9 @@ map <S-F6> :lclose<CR>
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! %!sudo tee > /dev/null %
+
+" Make F1 act as escape so you don't have to worry about mistyping
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
