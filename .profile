@@ -1,2 +1,2 @@
-export DE=xfce
+#export DE=xfce
 export BROWSER=chromium
