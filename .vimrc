@@ -53,7 +53,7 @@ Bundle 'Zenburn'
 
 " Syntax checking
 Bundle 'scrooloose/syntastic'
-let g:syntastic_python_checker = 'pyflakes'
+let g:syntastic_python_checker = 'flake8'
 
 
 filetype plugin indent on       " required!
