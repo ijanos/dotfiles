@@ -68,6 +68,10 @@ map <F4> :nohl<CR>
 map <S-Up> k
 map <S-Down> j
 
+" Move selected lines up/down, something like: http://vimcasts.org/episodes/bubbling-text/
+vmap <C-S-Down> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <C-S-Up> :m'<-2<cr>`>my`<mzgv`yo`z
+
 " Make tab in visual mode work like I think it should (keep highlighting)
 vmap <tab> >gv
 vmap <s-tab> <gv
