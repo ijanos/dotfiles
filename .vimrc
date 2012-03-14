@@ -55,6 +55,8 @@ Bundle 'Zenburn'
 Bundle 'scrooloose/syntastic'
 let g:syntastic_python_checker = 'flake8'
 
+" Surround plugin
+Bundle 'tpope/vim-surround'
 
 filetype plugin indent on       " required!
 
@@ -87,4 +89,3 @@ cmap w!! %!sudo tee > /dev/null %
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
-
