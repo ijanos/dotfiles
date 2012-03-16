@@ -68,13 +68,6 @@ export EDITOR=vim              # set editor
 
 setopt extended_glob
 
-# ---------------
-# Locale settings
-# ---------------
-
-export LC_TIME="hu_HU.UTF-8"
-export LC_PAPER="hu_HU.UTF-8"
-
 # -----------------
 # Extract function
 # -----------------
