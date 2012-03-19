@@ -6,3 +6,4 @@ set guioptions-=m           " remove the menubar
 set guioptions-=L           " remove left scrollbar
 set guioptions-=r           " remove right scrollbar
 set cul                     " cursorline, eyecandy
+set guicursor+=n-v-c:blinkon0 " disable blinking cursor
