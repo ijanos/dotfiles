@@ -197,5 +197,3 @@ alias dl='wget -c -t 0'
 alias wine32='WINEARCH=win32 WINEPREFIX=~/.wine32 wine'
 alias dpu="dropbox puburl"
 alias less="less -I" #case insensitive search in less
-
-chpwd
