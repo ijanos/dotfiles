@@ -4,7 +4,7 @@
 #
 
 # Set radeon card into low power mode
-echo low > /sys/class/drm/card0/device/power_profile
+echo mid > /sys/class/drm/card0/device/power_profile
 
 echo 256 > /sys/block/sda/queue/read_ahead_kb
 
