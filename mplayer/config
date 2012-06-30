@@ -1,14 +1,6 @@
-# Write your default config options here!
-
 [default]
-# use X11 for video output
 vo=xv
-# # use also for audio output
-ao=alsa
-softvol=yes
-softvol-max=1000
+ao=pulse
 
-ontop=yes
-
-[gnome-mplayer]
-msglevel=all=5
+softvol=1
+softvol-max=2000
