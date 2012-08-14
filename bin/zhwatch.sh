@@ -1,7 +1,7 @@
 #!/bin/bash
 
 URL=$1
-MSG='Moooo'
+MSG="Moooo - $1"
 
 wget $URL -O /tmp/original
 
