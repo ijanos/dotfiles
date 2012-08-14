@@ -65,6 +65,7 @@ setopt LISTTYPES               # show types in completion
 
 export PAGER='less -I'         # case insensitive less for manpages
 export EDITOR=vim              # set editor
+export MANWIDTH=80
 
 setopt extended_glob
 
