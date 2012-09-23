@@ -64,6 +64,9 @@ filetype plugin indent on       " required!
 "" Keymaps
 """"""""""
 
+" Select all
+map <C-a> ggVG
+
 map <F4> :nohl<CR>
 
 " Disable shift-up/down which is pgup/pgdown
