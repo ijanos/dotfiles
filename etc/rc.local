@@ -3,9 +3,6 @@
 # /etc/rc.local: Local multi-user start-up script.
 #
 
-# Set radeon card into low power mode
-echo mid > /sys/class/drm/card0/device/power_profile
-
 echo 256 > /sys/block/sda/queue/read_ahead_kb
 
 # change the scheduler queue length
@@ -21,6 +18,3 @@ echo 1 > /sys/module/snd_hda_intel/parameters/power_save
 
 # Disable nmi watchdog
 echo 0 > /proc/sys/kernel/nmi_watchdog
-
-# do not park the HDD head please
-hdparm -B 254 /dev/sda

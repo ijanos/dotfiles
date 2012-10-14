@@ -1,0 +1,2 @@
+KERNEL=="card0", SUBSYSTEM=="drm", DRIVERS=="radeon", ATTR{device/power_method}="profile", ATTR{device/power_profile}="mid"
+ACTION=="add", KERNEL=="sda", RUN+="/sbin/hdparm -B 254 /dev/sda"
