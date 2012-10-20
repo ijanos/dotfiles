@@ -1,0 +1,11 @@
+"keepassx"
+  control+alt+k
+
+"mpc --no-status toggle"
+  Control+Alt + p
+
+"urxvt -g 120x53+260+50 -name htop -e htop"
+ Control+Shift + Escape
+
+"urxvt -name ncmpcpp -g 133x53+240+30 -e ncmpcpp"
+  Alt+Mod4 + o
