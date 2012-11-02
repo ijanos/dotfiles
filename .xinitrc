@@ -1,1 +1,1 @@
-exec ck-launch-session dbus-launch openbox-session
+exec openbox-session
