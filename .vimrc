@@ -10,7 +10,7 @@ set wildmenu                    " show possible matches for tabcompletion
 set hidden                      " allow modified buffers to stay in the background
 
 " Exclude these files and directories from search
-set wildignore+=*.git/*,*.hg/*,*.svn/*,*.so,*.pdf,*.py[co],*.o,*.swp
+set wildignore+=*.git/*,*.hg/*,*.svn/*,*.so,*.pdf,*.py[co],*.o,*.swp,*.aux,*.toc
 
 
 " Only redraw when necessary to avoid flicker
