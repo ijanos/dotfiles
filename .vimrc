@@ -61,6 +61,13 @@ Bundle 'tpope/vim-surround'
 filetype plugin indent on       " required!
 
 """"""""""
+"" Settings
+""""""""""
+
+" Disable smartindent for LaTeX documents
+au BufEnter *.tex set nosmartindent
+
+""""""""""
 "" Keymaps
 """"""""""
 
