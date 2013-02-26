@@ -4,3 +4,6 @@ ao=pulse
 
 softvol=1
 softvol-max=2000
+
+quiet=yes
+lavdopts=threads=3
