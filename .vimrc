@@ -58,6 +58,9 @@ let g:syntastic_python_checker = 'flake8'
 " Surround plugin
 Bundle 'tpope/vim-surround'
 
+" TypeScript syntax
+Bundle 'leafgarland/typescript-vim'
+
 filetype plugin indent on       " required!
 
 """"""""""
