@@ -192,10 +192,7 @@ alias rm='rm -iv'
 alias F='find . -iname'
 alias topfiles='ls -lsR | sort -nr|less'
 alias pacsize="pacman -Qi|awk '/^Installed Size/{print int(\$4), name} /^Name/{name=\$3}'|sort -nr|less"
-alias -g BB="> /dev/null 2>&1 &!"
-alias netstatmod='netstat --all --numeric --programs --inet'
 alias dl='wget -c -t 0'
-alias wine32='WINEARCH=win32 WINEPREFIX=~/.wine32 wine'
-alias dpu="dropbox puburl"
 alias less="less -I" #case insensitive search in less
 alias grep='grep --color=auto'
+alias photo-organizer='jhead -n%Y-%m-%d/%Y%m%d_%H%M%S *'
