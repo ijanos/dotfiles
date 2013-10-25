@@ -8,13 +8,10 @@ set showcmd                     " display incomplete commands
 set number                      " always show line numbers
 set wildmenu                    " show possible matches for tabcompletion
 set hidden                      " allow modified buffers to stay in the background
+set laststatus=2                " always show statusbar line
 
 " Exclude these files and directories from search
 set wildignore+=*.git/*,*.hg/*,*.svn/*,*.so,*.pdf,*.py[co],*.o,*.swp,*.aux,*.toc
-
-
-" Only redraw when necessary to avoid flicker
-set lazyredraw
 
 "" Whitespace
 set nowrap                      " don't wrap lines
@@ -39,11 +36,6 @@ call vundle#rc()
 " let Vundle manage Vundle, required
 Bundle 'gmarik/vundle'
 
-" UI additions
-Bundle 'minibufexplorerpp'
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-
 Bundle 'kien/ctrlp.vim'
 " don’t manage working directory
 let g:ctrlp_working_path_mode = 0
@@ -64,7 +56,8 @@ Bundle 'leafgarland/typescript-vim'
 " Golang autocomplete
 Bundle 'nsf/gocode', {'rtp': 'vim/'}
 
-
+Bundle 'bling/vim-airline'
+let g:airline#extensions#tabline#enabled = 1
 
 filetype plugin indent on       " required!
 
@@ -111,3 +104,7 @@ cmap w!! %!sudo tee > /dev/null %
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
+
+" Easier buffer switching
+map <C-PageUp> :bp<CR>
+map <C-PageDown> :bn<CR>
