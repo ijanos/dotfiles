@@ -61,6 +61,11 @@ Bundle 'tpope/vim-surround'
 " TypeScript syntax
 Bundle 'leafgarland/typescript-vim'
 
+" Golang autocomplete
+Bundle 'nsf/gocode', {'rtp': 'vim/'}
+
+
+
 filetype plugin indent on       " required!
 
 """"""""""
