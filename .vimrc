@@ -71,6 +71,12 @@ filetype plugin indent on       " required!
 " Disable smartindent for LaTeX documents
 au BufEnter *.tex set nosmartindent
 
+" Auto format golang on save
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+
+" Recognize .md as markdown, not modula2
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+
 """"""""""
 "" Keymaps
 """"""""""
