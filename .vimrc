@@ -47,7 +47,8 @@ Bundle 'endel/vim-github-colorscheme'
 
 " Syntax checking
 Bundle 'scrooloose/syntastic'
-let g:syntastic_python_checker = 'flake8'
+let g:syntastic_python_checker = ['python', 'flake8']
+let g:syntastic_go_checkers = ['go', 'golint', 'govet']
 
 " Surround plugin
 Bundle 'tpope/vim-surround'
