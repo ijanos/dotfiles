@@ -111,3 +111,6 @@ vnoremap <F1> <ESC>
 " Easier buffer switching
 map <C-PageUp> :bp<CR>
 map <C-PageDown> :bn<CR>
+
+map <C-Tab> :bn<CR>
+map <C-S-Tab> :bp<CR>
