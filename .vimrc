@@ -43,6 +43,8 @@ let g:ctrlp_working_path_mode = 0
 " Zenburn colorscheme
 Bundle 'Zenburn'
 
+Bundle 'endel/vim-github-colorscheme'
+
 " Syntax checking
 Bundle 'scrooloose/syntastic'
 let g:syntastic_python_checker = 'flake8'
