@@ -77,6 +77,9 @@ autocmd FileType go autocmd BufWritePre <buffer> Fmt
 " Recognize .md as markdown, not modula2
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 
+" Highlight trailing whitespace
+match Todo /\s\+$/
+
 """"""""""
 "" Keymaps
 """"""""""
