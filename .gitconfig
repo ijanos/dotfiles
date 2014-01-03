@@ -11,7 +11,7 @@
 [merge]
 	tool = vimdiff
 [gui]
-	spellingdictionary = none
+	spellingdictionary = en_US
 	historybrowser = gitk
 	editor = gvim
 [giggle]
