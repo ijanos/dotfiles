@@ -10,14 +10,17 @@
 
 # Set to never or madvise to avoid lag during heavy IO
 # http://lwn.net/Articles/467328/
-echo never > /sys/kernel/mm/transparent_hugepage/defrag
+# echo never > /sys/kernel/mm/transparent_hugepage/defrag
 
 # Turn on audio card power save
-echo Y > /sys/module/snd_hda_intel/parameters/power_save_controller
-echo 1 > /sys/module/snd_hda_intel/parameters/power_save
+# echo Y > /sys/module/snd_hda_intel/parameters/power_save_controller
+# echo 1 > /sys/module/snd_hda_intel/parameters/power_save
 
 # Disable nmi watchdog
-echo 0 > /proc/sys/kernel/nmi_watchdog
+# echo 0 > /proc/sys/kernel/nmi_watchdog
 
 # Enable TCP fast open
-echo 3 > /proc/sys/net/ipv4/tcp_fastopen
+# echo 3 > /proc/sys/net/ipv4/tcp_fastopen
+
+# SSD
+# echo deadline > /sys/block/sdb/queue/scheduler
