@@ -1,2 +1,2 @@
-GOPATH=/home/ijanos/projects/gopath/
+GOPATH=/home/ijanos/projects/gopath
 PATH=$PATH:$GOPATH/bin
