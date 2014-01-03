@@ -170,6 +170,9 @@ bindkey "\eOF" end-of-line
 # completion in the middle of a line
 bindkey '^i' expand-or-complete-prefix
 
+# Search the history for <UP> key
+bindkey "OA" history-beginning-search-backward
+
 
 # -----------------
 # ALIASES
