@@ -1,2 +1,3 @@
 GOPATH=/home/ijanos/projects/gopath
-PATH=$PATH:$GOPATH/bin
+CABAL=/home/ijanos/.cabal
+PATH=$PATH:$GOPATH/bin:$CABAL/bin
