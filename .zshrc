@@ -17,7 +17,6 @@ zstyle ":completion:*:commands" rehash 1
 zstyle ':completion:*' completer _complete _match _approximate
 zstyle ':completion:*:match:*' original only
 zstyle ':completion:*:approximate:*' max-errors 2 numeric
-#setopt CORRECTALL
 
 # proper killall completion
 zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
@@ -48,6 +47,7 @@ HISTSIZE=8000
 SAVEHIST=8000
 setopt HIST_IGNORE_SPACE
 setopt HIST_IGNORE_ALL_DUPS
+setopt inc_append_history
 setopt share_history
 #lets each of my shells use the same history file, and the file is updated
 #after every command is run, so I no longer have to flick through each shell
@@ -57,15 +57,11 @@ setopt share_history
 setopt autopushd               # press cd -<tab> and see the magic
 setopt pushdignoredups         # and dont see duplicates
 
-setopt ALWAYS_TO_END BASH_AUTO_LIST
+setopt AUTO_LIST               # automatically list choices on an ambiguous completion
 
 setopt NO_CHECK_JOBS           # don't warn me about bg processes when exiting
 setopt NO_HUP                  # and don't kill them, either
 setopt LISTTYPES               # show types in completion
-
-export PAGER='less -I'         # case insensitive less for manpages
-export EDITOR=vim              # set editor
-export MANWIDTH=80
 
 setopt extended_glob
 
@@ -95,32 +91,19 @@ extract () {
 }
 
 
-# -----------------
-# MISC
-# -----------------
+# set terminal title bar
+precmd() {print -Pn "\e]2;(%3~)\a"}
 
-# set xterminals' title bar
-chpwd() {
-  [[ -t 1 ]] || return
-  case $TERM in
-    sun-cmd) print -Pn "\e]l%~\e\\"
-      ;;
-    *xterm*|*rxvt*|(dt|k|E)term) print -Pn "\e]2;% [zsh] %~ [%n@%m]\a"
-      ;;
-  esac
-}
 
-# -----------------
-# COLORS
-# -----------------
+# Colors
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 autoload colors zsh/terminfo
 eval `dircolors -b`
+
 # Completion with colors
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 bindkey -e
-
 
 # -----------------
 # PROMPT
@@ -131,9 +114,7 @@ if [[ "$terminfo[colors]" -ge 8 ]]; then
 	colors
 fi
 for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
-      #eval PR_$color='%{$terminfo[]$fg[${(L)color}]%}'
       eval PR_$color='%{$terminfo[bold]$fg[${(L)color}]%}'
-      #eval PR_LIGHT_$color='%{$fg[${(L)color}]%}'
       eval PR_LIGHT_$color='%{$terminfo[]$fg[${(L)color}]%}'
       (( count = $count + 1 ))
 done
@@ -144,35 +125,47 @@ PROMPT='$PR_BLUE($PR_LIGHT_GREEN%~$PR_BLUE) %(!.$PR_RED.$PR_LIGHT_WHITE)%#$PR_NO
 # -----------------
 # KEYBINDINGS
 # -----------------
-bindkey "\e[1~"  beginning-of-line
-bindkey "\e[4~"  end-of-line
-bindkey "\e[5~"  beginning-of-history
-bindkey "\e[6~"  end-of-history
-bindkey "\e[3~"  delete-char
-bindkey "\e[2~"  quoted-insert
-bindkey "\e[5C"  forward-word
-bindkey "\eOc"   emacs-forward-word
-bindkey "\e[5D"  backward-word
-bindkey "\eOd"   emacs-backward-word
-bindkey "\e\e[C" forward-word
-bindkey "\e\e[D" backward-word
-bindkey "^H"     backward-delete-word
-# for rxvt
-bindkey "\e[8~" end-of-line
-bindkey "\e[7~" beginning-of-line
-# for non RH/Debian xterm, can't hurt for RH/DEbian xterm
-bindkey "\eOH" beginning-of-line
-bindkey "\eOF" end-of-line
-# for freebsd console
-#bindkey "\e[H" beginning-of-line
 
-#bindkey "\e[F" end-of-line
-# completion in the middle of a line
-bindkey '^i' expand-or-complete-prefix
+# create a zkbd compatible hash;
+# to add other keys to this hash, see: man 5 terminfo
+typeset -A key
 
-# Search the history for <UP> key
-bindkey "OA" history-beginning-search-backward
+key[Home]=${terminfo[khome]}
 
+key[End]=${terminfo[kend]}
+key[Insert]=${terminfo[kich1]}
+key[Delete]=${terminfo[kdch1]}
+key[Up]=${terminfo[kcuu1]}
+key[Down]=${terminfo[kcud1]}
+key[Left]=${terminfo[kcub1]}
+key[Right]=${terminfo[kcuf1]}
+key[PageUp]=${terminfo[kpp]}
+key[PageDown]=${terminfo[knp]}
+
+# setup key accordingly
+[[ -n "${key[Home]}"     ]]  && bindkey  "${key[Home]}"     beginning-of-line
+[[ -n "${key[End]}"      ]]  && bindkey  "${key[End]}"      end-of-line
+[[ -n "${key[Insert]}"   ]]  && bindkey  "${key[Insert]}"   overwrite-mode
+[[ -n "${key[Delete]}"   ]]  && bindkey  "${key[Delete]}"   delete-char
+[[ -n "${key[Up]}"       ]]  && bindkey  "${key[Up]}"       up-line-or-history
+[[ -n "${key[Down]}"     ]]  && bindkey  "${key[Down]}"     down-line-or-history
+[[ -n "${key[Left]}"     ]]  && bindkey  "${key[Left]}"     backward-char
+[[ -n "${key[Right]}"    ]]  && bindkey  "${key[Right]}"    forward-char
+[[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"   beginning-of-buffer-or-history
+[[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}" end-of-buffer-or-history
+
+# Finally, make sure the terminal is in application mode, when zle is
+# active. Only then are the values from $terminfo valid.
+if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
+    function zle-line-init () {
+        printf '%s' "${terminfo[smkx]}"
+    }
+    function zle-line-finish () {
+        printf '%s' "${terminfo[rmkx]}"
+    }
+    zle -N zle-line-init
+    zle -N zle-line-finish
+fi
 
 # -----------------
 # ALIASES
@@ -196,6 +189,5 @@ alias F='find . -iname'
 alias topfiles='ls -lsR | sort -nr|less'
 alias pacsize="pacman -Qi|awk '/^Installed Size/{print int(\$4), name} /^Name/{name=\$3}'|sort -nr|less"
 alias dl='wget -c -t 0'
-alias less="less -I" #case insensitive search in less
-alias grep='grep --color=auto'
+alias grep='grep --color=always'
 alias photo-organizer='jhead -n%Y-%m-%d/%Y%m%d_%H%M%S *'
