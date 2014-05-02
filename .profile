@@ -1,3 +1,7 @@
-GOPATH=/home/ijanos/projects/gopath
-CABAL=/home/ijanos/.cabal
-PATH=$PATH:$GOPATH/bin:$CABAL/bin
+export GOPATH=/home/ijanos/projects/gopath
+export CABAL=/home/ijanos/.cabal
+export PATH=$PATH:$GOPATH/bin:$CABAL/bin
+
+export LESS=-Ri      # smart-case search and passing along escape characters (colorful grep)
+export EDITOR=vim    # set editor
+export MANWIDTH=80   # width of manpages
