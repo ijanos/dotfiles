@@ -92,7 +92,7 @@ extract () {
 
 
 # set terminal title bar
-precmd() {print -Pn "\e]2;(%3~)\a"}
+precmd() {print -Pn "\e]2;%4~\a"}
 
 
 # Colors
