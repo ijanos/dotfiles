@@ -43,12 +43,14 @@ setopt no_bgnice
 
 # history settings
 HISTFILE=~/.histfile
-HISTSIZE=8000
-SAVEHIST=8000
+HISTSIZE=10000
+SAVEHIST=10000
+setopt HIST_FCNTL_LOCK
+setopt HIST_SAVE_NO_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_IGNORE_ALL_DUPS
-setopt inc_append_history
-setopt share_history
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
 #lets each of my shells use the same history file, and the file is updated
 #after every command is run, so I no longer have to flick through each shell
 #window wondering which one in particular contains the shell with a copy of the
