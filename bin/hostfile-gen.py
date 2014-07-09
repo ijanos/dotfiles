@@ -3,6 +3,7 @@
 
 # Host Sources: https://github.com/dschuermann/ad-away/wiki/HostsSources
 
+import time
 import urllib.request
 
 OUTPUT_FILE = "hosts.adblock"
@@ -21,7 +22,7 @@ def download_hosts():
     for url in URLS:
         print("Downloading: " + url, end="...")
         try:
-            response = urllib.request.urlopen(url, timeout=10)
+            response = urllib.request.urlopen(url, timeout=15)
             print("DONE")
         except Exception as e:
             print("Error during download: " + str(e))
@@ -42,14 +43,16 @@ if __name__ == "__main__":
             continue
         if 'localhost' in line[1]:
             continue
-        if '255.255' in line[0]:
-            continue
         if line[0] == '0.0.0.0':
             line[0] = '127.0.0.1'
+        if '127.0.0.1' != line[0]:
+            print("\tomitted: " + ' '.join(line))
+            continue
         output.add(line[0] + ' ' + line[1] + '\n')
 
     print("Writing output file", end="...")
     f = open(OUTPUT_FILE, 'w')
+    f.write("# Creation time: {}\n".format(time.strftime("%Y-%m-%d %H:%M:%S")))
     for line in output:
         f.write(line)
     print("DONE")
