@@ -83,6 +83,10 @@ autocmd BufRead,BufNewFile *.md set filetype=markdown
 " Highlight trailing whitespace
 match Todo /\s\+$/
 
+" Show tab characters
+set list lcs=tab:→ 
+
+
 """"""""""
 "" Keymaps
 """"""""""
