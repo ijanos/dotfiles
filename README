@@ -1,0 +1,8 @@
+This is a collection of my configuration files and some small utility scripts.
+
+I hardlink the files to their desired location and use the unused.sh script to
+quickly check which one I forgot to link.
+
+I'm not sure if config files are protected by copyright but I'm placing
+everything inside this repository in the public domain nonetheless.
+See UNLICENSE file for legal info.
