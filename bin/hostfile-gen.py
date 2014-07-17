@@ -55,4 +55,5 @@ if __name__ == "__main__":
     f.write("# Creation time: {}\n".format(time.strftime("%Y-%m-%d %H:%M:%S")))
     for line in output:
         f.write(line)
+    f.close()
     print("DONE")
