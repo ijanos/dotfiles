@@ -20,7 +20,7 @@ URLS = ['http://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro
 def download_hosts():
     hosts = ""
     for url in URLS:
-        print("Downloading: " + url, end="...")
+        print("Downloading: " + url, end="...", flush=True)
         try:
             response = urllib.request.urlopen(url, timeout=15)
             print("DONE")
@@ -50,7 +50,7 @@ if __name__ == "__main__":
             continue
         output.add(line[0] + ' ' + line[1] + '\n')
 
-    print("Writing output file", end="...")
+    print("Writing output file", end="...", flush=True)
     f = open(OUTPUT_FILE, 'w')
     f.write("# Creation time: {}\n".format(time.strftime("%Y-%m-%d %H:%M:%S")))
     for line in output:
