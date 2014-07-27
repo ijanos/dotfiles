@@ -112,6 +112,16 @@ bindkey -e
 # -----------------
 setopt prompt_subst
 
+
+function virtualenv_prompt() {
+    if [ -n "$VIRTUAL_ENV" ]; then
+        echo "(${VIRTUAL_ENV##*/}) "
+    fi
+}
+
+export PROMPT='%n@%m> '
+
+
 if [[ "$terminfo[colors]" -ge 8 ]]; then
 	colors
 fi
@@ -122,7 +132,9 @@ for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
 done
 PR_NO_COLOUR="%{$terminfo[sgr0]%}"
 
-PROMPT='$PR_NO_COLOUR($PR_BLUE%~$PR_NO_COLOUR) %(!.$PR_RED#.$PR_LIGT_BLUE>)$PR_NO_COLOUR '
+PROMPT='$PR_NO_COLOUR$(virtualenv_prompt)($PR_BLUE%~$PR_NO_COLOUR) %(!.$PR_RED#.$PR_LIGT_BLUE>)$PR_NO_COLOUR '
+
+
 
 # -----------------
 # KEYBINDINGS
