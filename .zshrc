@@ -5,6 +5,7 @@
 autoload -Uz compinit
 compinit
 zstyle :compinstall filename '/home/ijanos/.zshrc'
+eval "$(vex --shell-config zsh)"
 
 # Use completion cache
 zstyle ':completion:*' use-cache on
