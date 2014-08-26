@@ -8,6 +8,7 @@
 
 find .\
     -path "./.git/*" -prune -o\
+    -path "./bin/*" -prune -o\
     -name "README" -prune -o\
     -name "UNLICENSE" -prune -o\
     -name "unused.sh" -prune -o\
