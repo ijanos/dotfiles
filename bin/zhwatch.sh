@@ -12,5 +12,5 @@ while true; do
         figlet $MSG|cowsay -n|xmessage -file - -center
         exit
     fi
-	sleep 50
+    sleep 50
 done
