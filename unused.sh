@@ -9,5 +9,6 @@
 find .\
     -path "./.git/*" -prune -o\
     -name "README" -prune -o\
+    -name "UNLICENSE" -prune -o\
     -name "unused.sh" -prune -o\
     -links 1 -print
