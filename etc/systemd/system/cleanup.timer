@@ -3,6 +3,8 @@ Description=Regular pacman cache cleanup
 
 [Timer]
 OnCalendar=weekly
+# run immediately if we missed a backup for some reason
+Persistent=true
 
 [Install]
 WantedBy=multi-user.target
