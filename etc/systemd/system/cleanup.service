@@ -5,4 +5,4 @@ Description=Pacman cache cleanup
 Nice=19
 IOSchedulingClass=2
 IOSchedulingPriority=7
-ExecStart=/bin/sh -c 'yes|pacaman -Scc'
+ExecStart=/bin/sh -c 'yes|pacman -Scc'
