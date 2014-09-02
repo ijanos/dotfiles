@@ -31,40 +31,42 @@ set shell=/usr/bin/dash
 """"""""""""""""""
 "" Vundle settings
 """"""""""""""""""
-filetype off                    " required
+filetype off                  " required
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle, required
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 " don’t manage working directory
 let g:ctrlp_working_path_mode = 0
 
 " Zenburn colorscheme
-Bundle 'Zenburn'
+Plugin 'Zenburn'
 
-Bundle 'endel/vim-github-colorscheme'
+Plugin 'endel/vim-github-colorscheme'
 
 " Syntax checking
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 let g:syntastic_python_checkers = ['python', 'flake8']
 let g:syntastic_go_checkers = ['go', 'golint', 'govet']
 
 " Surround plugin
-Bundle 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 
 " TypeScript syntax
-Bundle 'leafgarland/typescript-vim'
+Plugin 'leafgarland/typescript-vim'
 
 " Golang autocomplete
-Bundle 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
 
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
 
+call vundle#end()
 filetype plugin indent on       " required!
 
 """"""""""
