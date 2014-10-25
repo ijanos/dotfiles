@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Adlbock hosts file generator
+# Adblock hosts file generator
 
 # Host Sources: https://github.com/dschuermann/ad-away/wiki/HostsSources
 
