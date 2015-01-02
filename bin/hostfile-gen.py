@@ -13,7 +13,8 @@ URLS = ['http://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro
         'http://hosts-file.net/ad_servers.txt',
         'https://adaway.org/hosts.txt',
         'http://someonewhocares.org/hosts/hosts',
-        'http://www.malwaredomainlist.com/hostslist/hosts.txt'
+        'http://www.malwaredomainlist.com/hostslist/hosts.txt',
+        'http://adblock.gjtech.net/?format=unix-hosts'
         ]
 
 
