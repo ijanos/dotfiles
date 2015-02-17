@@ -4,7 +4,7 @@ Version=1.0
 Terminal=false
 Type=Application
 Name=Google Music
-Exec=/usr/bin/chromium --app=https://music.google.com
+Exec=/usr/bin/google-chrome-stable --start-maximized --app=https://music.google.com
 Icon=/home/ijanos/.local/share/icons/googlemusic.png
 Categories=AudioVideo;Audio
 StartupWMClass=music.google.com
