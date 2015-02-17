@@ -1,5 +1,4 @@
-# Write your default config options here!
-
-vo=opengl
+vo=opengl-hq:smoothmotion
+hwdec=vaapi
 softvol=yes
 softvol-max=1500
