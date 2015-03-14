@@ -2,3 +2,4 @@ vo=opengl-hq:smoothmotion
 hwdec=vaapi
 softvol=yes
 softvol-max=1500
+ontop
