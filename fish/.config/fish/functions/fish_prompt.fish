@@ -1,5 +1,10 @@
 function fish_prompt
 
+  # simple root prompt
+  if [ $USER = root ]
+   printf '%s[root] %s%s%s ➜ ' (set_color -o red) (set_color -o blue) (basename (prompt_pwd)) (set_color -o red)
+   return
+  end
   if not set -q -g __fish_robbyrussell_functions_defined
     set -g __fish_robbyrussell_functions_defined
     function _git_branch_name
