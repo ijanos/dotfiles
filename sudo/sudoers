@@ -1,0 +1,7 @@
+Defaults env_keep += "LANG LANGUAGE LINGUAS LC_* _XKB_CHARSET"
+
+Defaults env_keep += "HOME"
+
+root ALL=(ALL) ALL
+
+%wheel ALL=(ALL) ALL
