@@ -14,9 +14,8 @@ wakeups = [
 
 while True:
     sleep(20)
-    current_time= strftime("%H:%M")
+    current_time = strftime("%H:%M")
     if current_time in wakeups:
-        sleep(randrange(45,200))
+        sleep(randrange(45, 200))
         print("\n\nWaking up at " + current_time + "\n\n")
         call("./curl.sh", shell=True)
-
