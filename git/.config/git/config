@@ -10,6 +10,7 @@
 	excludesfile = /home/ijanos/.config/global_gitignore
 [merge]
 	tool = vimdiff
+	ff = only
 [gui]
 	spellingdictionary = en_US
 	historybrowser = gitk
