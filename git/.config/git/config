@@ -9,7 +9,7 @@
 	pager = less -RS
 	excludesfile = /home/ijanos/.config/global_gitignore
 [merge]
-	tool = vimdiff
+	tool = meld
 	ff = only
 [gui]
 	spellingdictionary = en_US
