@@ -7,7 +7,7 @@
 [core]
 	editor = vim
 	pager = less -RS
-	excludesfile = /home/ijanos/.config/global_gitignore
+	excludesfile = /home/ijanos/.config/git/gitignore
 [merge]
 	tool = meld
 	ff = only
