@@ -24,4 +24,4 @@
 [credential]
 	helper = cache --timeout=600
 [diff]
-	algorithm = patience
+	algorithm = histogram
