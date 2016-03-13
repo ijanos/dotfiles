@@ -15,12 +15,6 @@
 	spellingdictionary = en_US
 	historybrowser = gitk
 	editor = gvim
-[giggle]
-	main-window-maximized = true
-	main-window-geometry = 0x0+0+0
-	history-view-vpane-position = 298
-	file-view-vpane-position = 662
-	main-window-view = HistoryView
 [alias]
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
     ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
