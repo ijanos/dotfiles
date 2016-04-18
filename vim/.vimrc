@@ -9,3 +9,4 @@ Plug 'rust-lang/rust.vim'
 call plug#end()
 
 set smartcase
+set number
