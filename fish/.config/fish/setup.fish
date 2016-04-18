@@ -5,3 +5,4 @@ set -U fish_user_paths ~/.local/bin/
 set -Ux MANWIDTH 80
 set -Ux EDITOR vim
 set -Ux LESS -Ri
+set -Ux AURDEST /tmp
