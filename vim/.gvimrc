@@ -1,5 +1,5 @@
 let g:airline_theme='zenburn' " set airline color scheme
-set guifont=Inconsolata\ 14 " set font
+set guifont=Fira\ Mono\ 14  " set font
 colorscheme github          " set color scheme
 
 set guioptions-=T           " remove the toolbar
