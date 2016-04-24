@@ -10,3 +10,6 @@ call plug#end()
 
 set smartcase
 set number
+
+" ignore files in .gitignore when using CTRL-P
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
