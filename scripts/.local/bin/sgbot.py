@@ -1,4 +1,4 @@
-# pylint: disable=line-too-long, missing-docstring, too-few-public-methods, invalid-name
+# pylint: disable=line-too-long, missing-docstring, too-few-public-methods, invalid-name, too-many-arguments
 import time
 import logging
 import requests
@@ -10,9 +10,10 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s %(name)s %(levelname
 LOG = logging.info
 
 class Giveaway:
-    def __init__(self, name, points, href):
+    def __init__(self, name, points, href, entries, remaining, created):
         self.name = name
         self.points = points
+        self.chance = 1 / (entries + remaining * (entries/created))
         self.href = "https://www.steamgifts.com" + href
 
     def enter(self):
@@ -28,15 +29,16 @@ class Giveaway:
         requests.post('https://www.steamgifts.com/ajax.php', headers=user_agent, cookies=cookie, data=formData)
 
     def __str__(self):
-        return "{} ({}P) [{}]".format(self.name, self.points, self.href)
+        return "{} ({}P) [{}] Chance: {}".format(self.name, self.points, self.href, self.chance)
 
     def __repr__(self):
-        return "{} ({}P) [{}]".format(self.name, self.points, self.href)
+        return "{} ({}P) [{}] Chance: {}".format(self.name, self.points, self.href, self.chance)
 
 
 def load_giveaways():
     """ Return sorted list of Giveaways worth 10 points or more """
-    url_pattern = "https://www.steamgifts.com/giveaways/search?page={}&type=new"
+    #url_pattern = "https://www.steamgifts.com/giveaways/search?page={}&type=new"
+    url_pattern = "https://www.steamgifts.com/giveaways/search?page={}"
     user_agent = {"User-agent": config.USER_AGENT}
     cookie = {"PHPSESSID": config.SESSION}
 
@@ -51,13 +53,28 @@ def load_giveaways():
             if g.find('div', class_='is-faded'):
                 # skip already entered giveaways
                 continue
+            remaining = convert_time(*g.find(lambda tag: tag.name == 'span' and "remain" in tag.text).text.split()[:2])
+            if remaining == 0:
+                # skip giveaways ending in less than a minute
+                continue
+            entries = int(''.join([i for i in g.find(lambda tag: tag.name == 'span' and 'entr' in tag.text).text.split()[0] if i.isnumeric()]))
+            created = convert_time(*g.find(lambda tag: tag.name == 'span' and "ago" in tag.text).text.split()[:2])
+            created = max(created, 1)
+            if None in (remaining, entries, created):
+                print(remaining, entries, created)
+                print(g)
             game = g.find('a')
             name = game.text
             link = game['href']
             points = int(''.join([p for p in g.find(points_span).text if p.isdigit()]))
-            giveaways.append(Giveaway(name, points, link))
+            giveaways.append(Giveaway(name=name,
+                                      points=points,
+                                      href=link,
+                                      entries=entries,
+                                      created=created,
+                                      remaining=remaining))
     giveaways = [g for g in giveaways if g.points > 9]
-    giveaways.sort(key=lambda g: g.points, reverse=True)
+    giveaways.sort(key=lambda g: g.chance, reverse=True)
     return giveaways
 
 
@@ -70,11 +87,24 @@ def get_user_points():
     return int(soup.find('span', class_="nav__points").text)
 
 
+def convert_time(n, what):
+    n = int(''.join(filter(lambda x: x.isnumeric(), n)))
+    if "minute" in what:
+        return n
+    if "hour" in what:
+        return n * 60
+    if "day" in what:
+        return n * 24 * 60
+    if "second" in what:
+        return 0
+    if "week" in what:
+        return n * 7 * 24 * 60
+
 def loop():
     while True:
         points = get_user_points()
         LOG("Current points: {}".format(points))
-        if points > 60: # only start entering giveaways with 60 points or more
+        if points > 60:
             giveaways = load_giveaways()
             for g in giveaways:
                 if g.points > points:
@@ -84,7 +114,7 @@ def loop():
                 points -= g.points
                 LOG("{} points reamaining".format(points))
         LOG("Going to sleep")
-        time.sleep(15*60) # wait 15 minutes
+        time.sleep(8*60)
 
 
 if __name__ == "__main__":
