@@ -5,6 +5,7 @@ Plug 'endel/vim-github-colorscheme'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dag/vim-fish'
 Plug 'bronson/vim-trailing-whitespace'
+Plug 'scrooloose/syntastic'
 Plug 'rust-lang/rust.vim'
 call plug#end()
 
