@@ -35,7 +35,7 @@ class Giveaway:
         return "{} ({}P) [{}] Chance: {}".format(self.name, self.points, self.href, self.chance)
 
 
-def load_giveaways():
+def load_giveaways(biggame=False):
     """ Return sorted list of Giveaways worth 10 points or more """
     #url_pattern = "https://www.steamgifts.com/giveaways/search?page={}&type=new"
     url_pattern = "https://www.steamgifts.com/giveaways/search?page={}"
@@ -58,6 +58,7 @@ def load_giveaways():
                 # skip giveaways ending in less than a minute
                 continue
             entries = int(''.join([i for i in g.find(lambda tag: tag.name == 'span' and 'entr' in tag.text).text.split()[0] if i.isnumeric()]))
+            entries = max(entries, 1)
             created = convert_time(*g.find(lambda tag: tag.name == 'span' and "ago" in tag.text).text.split()[:2])
             created = max(created, 1)
             if None in (remaining, entries, created):
@@ -73,8 +74,11 @@ def load_giveaways():
                                       entries=entries,
                                       created=created,
                                       remaining=remaining))
-    giveaways = [g for g in giveaways if g.points > 9]
-    giveaways.sort(key=lambda g: g.chance, reverse=True)
+    giveaways = [g for g in giveaways if g.points > 8]
+    if biggame:
+        giveaways.sort(key=lambda g: g.points, reverse=True)
+    else:
+        giveaways.sort(key=lambda g: g.chance, reverse=True)
     return giveaways
 
 
@@ -101,11 +105,13 @@ def convert_time(n, what):
         return n * 7 * 24 * 60
 
 def loop():
+    biggame = False
     while True:
         points = get_user_points()
         LOG("Current points: {}".format(points))
         if points > 60:
-            giveaways = load_giveaways()
+            giveaways = load_giveaways(biggame)
+            biggame = not biggame
             for g in giveaways:
                 if g.points > points:
                     continue
