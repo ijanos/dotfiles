@@ -18,3 +18,9 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 " move cursor by display lines when wrapping
 noremap  <buffer> <silent> <Up>   gk
 noremap  <buffer> <silent> <Down> gj
+
+nnoremap <Tab> >>_
+nnoremap <S-Tab> <<_
+inoremap <S-Tab> <C-D>
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
