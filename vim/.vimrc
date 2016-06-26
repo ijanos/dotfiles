@@ -7,6 +7,7 @@ Plug 'dag/vim-fish'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'scrooloose/syntastic'
 Plug 'rust-lang/rust.vim'
+Plug 'matze/vim-move'
 call plug#end()
 
 set smartcase
@@ -24,3 +25,8 @@ nnoremap <S-Tab> <<_
 inoremap <S-Tab> <C-D>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
+
+vmap <A-Down> <Plug>MoveBlockDown
+vmap <A-Up> <Plug>MoveBlockUp
+nmap <A-Down> <Plug>MoveLineDown
+nmap <A-Up> <Plug>MoveLineUp
