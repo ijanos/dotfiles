@@ -30,3 +30,7 @@ vmap <A-Down> <Plug>MoveBlockDown
 vmap <A-Up> <Plug>MoveBlockUp
 nmap <A-Down> <Plug>MoveLineDown
 nmap <A-Up> <Plug>MoveLineUp
+
+" disable F1 help and map it to ESC
+map <F1> <Esc>
+imap <F1> <Esc>
