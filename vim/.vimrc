@@ -1,6 +1,7 @@
 call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-commentary'
 Plug 'endel/vim-github-colorscheme'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dag/vim-fish'
