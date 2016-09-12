@@ -26,6 +26,11 @@ inoremap <S-Tab> <C-D>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
+" disable shift-up/down
+" I never press these intentionally
+noremap <S-Up> <NOP>
+noremap <S-Down> <NOP>
+
 vmap <A-Down> <Plug>MoveBlockDown
 vmap <A-Up> <Plug>MoveBlockUp
 nmap <A-Down> <Plug>MoveLineDown
