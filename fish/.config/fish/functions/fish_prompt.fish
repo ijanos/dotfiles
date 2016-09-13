@@ -41,9 +41,9 @@ function fish_prompt
      set vex_info "$blue (venv:$normal$ve_tag$blue)"
   end
 
-  if test -e "Cargo.toml" -a -e "/usr/bin/multirust";
+  if test -e "Cargo.toml";
     set -l c (set_color -o blue)
-    set -l toolchain (multirust ctl override-toolchain)
+    set -l toolchain (rustup_prompt_helper)
     set multirust " $c(rust:$normal$toolchain$c)"
   end
 
