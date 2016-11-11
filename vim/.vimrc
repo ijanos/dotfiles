@@ -11,6 +11,9 @@ Plug 'rust-lang/rust.vim'
 Plug 'matze/vim-move'
 call plug#end()
 
+" follow but ignore looped internal symlinks to avoid duplicates
+let g:ctrlp_follow_symlinks = 1
+
 set smartcase
 set number
 
