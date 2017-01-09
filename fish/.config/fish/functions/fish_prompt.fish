@@ -26,6 +26,7 @@ function fish_prompt
   set -l blue (set_color -o blue)
   set -l green (set_color -o green)
   set -l normal (set_color normal)
+  set -l grey (set_color dddddd)
 
   if [ (_git_branch_name) ]
     set -l branch_color $normal
@@ -49,8 +50,10 @@ function fish_prompt
 
   set -l arrow " $red➜ "
   set -l cwd $blue(basename (prompt_pwd))
+  set -l time $grey(date +"%H:%M")
 
-  printf ' %s%s%s%s%s' \
+  printf '%s %s%s%s%s%s' \
+     $time \
      $cwd \
      $multirust \
      $vex_info \
