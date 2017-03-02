@@ -1,0 +1,13 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.minimap.enabled": true,
+    "workbench.editor.showTabs": false,
+    "window.menuBarVisibility": "toggle",
+    "python.linting.mypyEnabled": false,
+    "python.linting.pylintPath": "python3-pylint",
+    "python.linting.pylintArgs": [
+        "--disable=missing-docstring,invalid-name,line-too-long,trailing-whitespace,trailing-newlines,missing-final-newline"
+    ],
+    "workbench.colorTheme": "Visual Studio Light",
+    "workbench.iconTheme": "vs-seti"
+}
