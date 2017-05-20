@@ -3,7 +3,7 @@ Description=Regular pacman cache cleanup
 
 [Timer]
 OnCalendar=weekly
-# run immediately if we missed a backup for some reason
+# run immediately if we missed a run
 Persistent=true
 
 [Install]
