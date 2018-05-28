@@ -1,8 +1,8 @@
-export GOPATH=/home/ijanos/projects/gopath
-export CABAL=/home/ijanos/.cabal
-export PATH=$PATH:$GOPATH/bin:$CABAL/bin:/home/ijanos/.npm/bin:/home/ijanos/.local/bin
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.npm-pkgs/bin:$PATH"
 
-export LESS=-Ri      # smart-case search and passing along escape characters (colorful grep)
-export EDITOR=vim    # set editor
-export MANWIDTH=80   # width of manpages
-export QT_AUTO_SCREEN_SCALE_FACTOR=0 # fix VLC huge UI issues
+export LESS=-Ri  # smart-case search and passing along escape characters (colorful grep)
+export EDITOR=vim
+export MANWIDTH=80
+export QT_AUTO_SCREEN_SCALE_FACTOR=0 # fix VLC huge UI bug
