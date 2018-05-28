@@ -1,0 +1,5 @@
+[Match]
+Path=pci-0000:00:1f.6
+
+[Link]
+WakeOnLan=off
