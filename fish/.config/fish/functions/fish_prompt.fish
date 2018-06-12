@@ -48,7 +48,7 @@ function fish_prompt
     set multirust " $c(rust:$normal$toolchain$c)"
   end
 
-  set -l arrow " $red➜ "
+  set -l arrow " $red➜$normal "
   set -l cwd $blue(basename (prompt_pwd))
   set -l time $grey(date +"%H:%M")
 
