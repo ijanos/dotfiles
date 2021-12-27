@@ -1,3 +1,5 @@
+# bash will ignore this file if ~/.bash_profile exists
+
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.npm-pkgs/bin:$PATH"
