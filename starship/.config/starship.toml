@@ -1,0 +1,11 @@
+[aws]
+disabled = true
+
+[python]
+disabled = true
+
+[cmake]
+disabled = true
+
+[nodejs]
+disabled = true
