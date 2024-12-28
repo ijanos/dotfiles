@@ -1,0 +1,6 @@
+window-theme = ghostty
+gtk-tabs-location = bottom
+#adw-toolbar-style = raised-border
+theme = AtomOneLight
+font-family = "Iosevka Term"
+gtk-wide-tabs = false
